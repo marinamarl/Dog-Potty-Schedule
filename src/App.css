@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+span {
+  display: flex;
+  justify-content: space-around;
+}
+
+button {
+  margin-top: 25%;
+  padding: 18px 39px;
+  border-radius: 10%;
+  background: lightgoldenrodyellow;
+  border: 0;
+  box-shadow: 0 0 11px -2px #00000061;
+  text-transform: capitalize;
+}

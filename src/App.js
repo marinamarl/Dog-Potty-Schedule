@@ -1,40 +1,19 @@
 import React from "react";
-import User from "./User.js";
-import Addpee from "./Addpee"
+import styles from './App.css'
+
 export default class MyComponent extends React.Component {
   state = {
-    tempDate: new Date(),
-    date: [],
-    time: [],
-    timestamp: []
+    bmoves:[{value: "pee"},{value: "poo"}]
   };
 
-
-
-  useCurrentDateTime = (date, time) => {
-    this.setState({
-      date:
-        this.state.tempDate.getDate() +
-        "/" +
-        (this.state.tempDate.getMonth() + 1) +
-        "/" +
-        this.state.tempDate.getFullYear(),
-      time:
-        this.state.tempDate.getHours() + ":" + this.state.tempDate.getMinutes() + ":" + this.state.tempDate.getSeconds()
-    });
-    this.setState({ timestamp: this.state.date + " " + this.state.time });
-  };
 
   render() {
     return (
-      <div>
-        <User />
-        <hr />
-        <p>the Date: {this.state.date } The time: {this.state.time}</p>
-        <Addpee useCurrentDateTime={this.useCurrentDateTime} />
-        <p>{this.state.timestamp}</p>
-        {console.log(this.state.timestamp)}
-      </div>
+      <span>
+      {this.state.bmoves.map(item => (
+        <button>{item.value}</button>
+      ))}
+      </span>
     );
   }
 }
